@@ -19,7 +19,7 @@ public class User implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
-	private byte administrator;
+	private boolean administrator;
 
 	@Column(name="created_at")
 	private Timestamp createdAt;
@@ -32,12 +32,13 @@ public class User implements Serializable {
 
 	private String phone;
 	
+	@Column(nullable=true)
 	private JuniorEnterprise je;
 
-	@Column(name="remember_token")
+	@Column(name="remember_token", nullable=true)
 	private String rememberToken;
 
-	private byte status;
+	private boolean active;
 
 	@Column(name="updated_at")
 	private Timestamp updatedAt;
@@ -53,11 +54,11 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public byte getAdministrator() {
+	public boolean getAdministrator() {
 		return this.administrator;
 	}
 
-	public void setAdministrator(byte administrator) {
+	public void setAdministrator(boolean administrator) {
 		this.administrator = administrator;
 	}
 
@@ -117,12 +118,12 @@ public class User implements Serializable {
 		this.rememberToken = rememberToken;
 	}
 
-	public byte getStatus() {
-		return this.status;
+	public boolean getActive() {
+		return this.active;
 	}
 
-	public void setStatus(byte status) {
-		this.status = status;
+	public void setActive(boolean status) {
+		this.active = status;
 	}
 
 	public Timestamp getUpdatedAt() {
