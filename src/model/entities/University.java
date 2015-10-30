@@ -1,4 +1,4 @@
-package rpsigma.model.entities;
+package model.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;

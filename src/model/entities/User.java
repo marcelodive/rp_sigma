@@ -1,4 +1,4 @@
-package rpsigma.model.entities;
+package model.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -31,6 +31,8 @@ public class User implements Serializable {
 	private String password;
 
 	private String phone;
+	
+	private JuniorEnterprise je;
 
 	@Column(name="remember_token")
 	private String rememberToken;
@@ -97,6 +99,14 @@ public class User implements Serializable {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public JuniorEnterprise getJe() {
+		return je;
+	}
+
+	public void setJe(JuniorEnterprise je) {
+		this.je = je;
 	}
 
 	public String getRememberToken() {

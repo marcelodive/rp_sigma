@@ -21,6 +21,24 @@
 		<p:password id="password" feedback="true"
                     promptLabel="Insira sua senha" weakLabel="Fraco, muito fraco"
                     goodLabel="Bom, mas não muito" strongLabel="Excelente!" />
+
+		<p:outputLabel for="phone" value="Telefone: " />
+		<p:inputText id="phone" />		
+ 
+<!--         <p:outputLabel value="Empresa Júnior: " for="juniorEnterprises" /> -->
+        
+<!--         <p:autoComplete id="juniorEnterprises" value="#{autoCompleteView.theme2}" completeMethod="#{autoCompleteView.completeTheme}" -->
+<!--                         var="theme" itemLabel="#{theme.displayName}" itemValue="#{theme}" converter="themeConverter" forceSelection="true"> -->
+<!--             <p:column> -->
+<!--                 <h:outputText styleClass="ui-theme ui-theme-#{theme.name}" /> -->
+<!--             </p:column> -->
+ 
+<!--             <p:column> -->
+<!--                 <h:outputText value="#{theme.displayName}" /> -->
+<!--             </p:column> -->
+<!--         </p:autoComplete> -->
+
+		<p:commandButton value="Salvar" id="withIcon" actionListener="#" update="" icon="ui-icon-disk" />
 	</p:panelGrid>
 
 </h:body>
