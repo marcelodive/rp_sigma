@@ -19,5 +19,14 @@ public class JuniorEnterpriseDAO {
 		juniorEnterprises = query.getResultList();
 		entityManager.close();
 		return juniorEnterprises;
+	}
+
+	public void deleteJE(JuniorEnterprise juniorEnterprise) {
+		EntityManager entityManager = JPAUtil.getEntityManager();
+		entityManager.getTransaction().begin();
+		juniorEnterprise = entityManager.merge(juniorEnterprise);
+		entityManager.remove(juniorEnterprise);
+		entityManager.getTransaction().commit();
+		entityManager.close();		
 	}	
 }

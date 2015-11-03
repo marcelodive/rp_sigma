@@ -10,16 +10,21 @@
 	<title>Lista EJs - RP Sigma</title>
 </h:head>
 <h:body>
-
-	<p:dataTable var="JEs" value="#{juniorEnterpriseSupport.juniorEnterprises}">
-		<p:column headerText="Id">
-			<h:outputText value="#{JEs.id}" />
-		</p:column>
-		
-		<p:column headerText="Nome">
-			<h:outputText value="#{JEs.abbreviation}" />
-		</p:column>		
-	</p:dataTable>
+	<h:form id="dataTableJEs">
+		<p:dataTable var="JE" value="#{juniorEnterpriseSupport.juniorEnterprises}">
+			<p:column headerText="Id">
+				<h:outputText value="#{JE.id}" />
+			</p:column>
+			
+			<p:column headerText="Nome">
+				<h:outputText value="#{JE.abbreviation}" />
+			</p:column>	
+			
+			<p:column headerText="Excluir">
+				<p:commandButton value="Excluir" id="delete" update=":dataTableJEs" actionListener="#{listaEjsBacking.deleteEj(JE)}" styleClass="ui-priority-primary" />
+			</p:column>	
+		</p:dataTable>
+	</h:form>
 
 </h:body>
 </html>
