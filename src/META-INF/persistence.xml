@@ -3,6 +3,18 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="rpsigma">
+		<class>model.entities.Activity</class>
+		<class>model.entities.ActivityClassification</class>
+		<class>model.entities.ActivityClassificationPK</class>
+		<class>model.entities.City</class>
+		<class>model.entities.Country</class>
+		<class>model.entities.Department</class>
+		<class>model.entities.Field</class>
+		<class>model.entities.JuniorEnterprise</class>
+		<class>model.entities.Service</class>
+		<class>model.entities.State</class>
+		<class>model.entities.University</class>
+		<class>model.entities.User</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/fejemg" />

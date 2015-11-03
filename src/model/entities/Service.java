@@ -16,12 +16,15 @@ public class Service implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
 	private String name;
 
-	//bi-directional many-to-many association to JuniorEnterprise
+	//bi-directional many-to-one association to Field
+	@ManyToOne
+	private Field field;
+
+	//bi-directional many-to-many association to JuniorEnterpris
 	@ManyToMany
 	@JoinTable(
 		name="service_je"
@@ -33,10 +36,6 @@ public class Service implements Serializable {
 			}
 		)
 	private List<JuniorEnterprise> juniorEnterprises;
-
-	//bi-directional many-to-one association to Field
-	@ManyToOne
-	private Field field;
 
 	public Service() {
 	}
@@ -57,20 +56,20 @@ public class Service implements Serializable {
 		this.name = name;
 	}
 
-	public List<JuniorEnterprise> getJuniorEnterprises() {
-		return this.juniorEnterprises;
-	}
-
-	public void setJuniorEnterprises(List<JuniorEnterprise> juniorEnterprises) {
-		this.juniorEnterprises = juniorEnterprises;
-	}
-
 	public Field getField() {
 		return this.field;
 	}
 
 	public void setField(Field field) {
 		this.field = field;
+	}
+
+	public List<JuniorEnterprise> getJuniorEnterprises() {
+		return this.juniorEnterprises;
+	}
+
+	public void setJuniorEnterprises(List<JuniorEnterprise> juniorEnterprises) {
+		this.juniorEnterprises = juniorEnterprises;
 	}
 
 }

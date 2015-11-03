@@ -16,7 +16,6 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
 	private boolean administrator;
@@ -31,14 +30,11 @@ public class User implements Serializable {
 	private String password;
 
 	private String phone;
-	
-	@Column(nullable=true)
-	private JuniorEnterprise je;
 
-	@Column(name="remember_token", nullable=true)
+	@Column(name="remember_token")
 	private String rememberToken;
 
-	private boolean active;
+	private boolean status;
 
 	@Column(name="updated_at")
 	private Timestamp updatedAt;
@@ -102,14 +98,6 @@ public class User implements Serializable {
 		this.phone = phone;
 	}
 
-	public JuniorEnterprise getJe() {
-		return je;
-	}
-
-	public void setJe(JuniorEnterprise je) {
-		this.je = je;
-	}
-
 	public String getRememberToken() {
 		return this.rememberToken;
 	}
@@ -118,12 +106,12 @@ public class User implements Serializable {
 		this.rememberToken = rememberToken;
 	}
 
-	public boolean getActive() {
-		return this.active;
+	public boolean getStatus() {
+		return this.status;
 	}
 
-	public void setActive(boolean status) {
-		this.active = status;
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 	public Timestamp getUpdatedAt() {

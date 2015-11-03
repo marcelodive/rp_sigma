@@ -12,12 +12,11 @@ import java.util.List;
  */
 @Entity
 @Table(name="junior_enterprises")
-@NamedQuery(name="JuniorEnterprise.findAll", query="SELECT j FROM JuniorEnterprise j")
+@NamedQuery(name="JuniorEnterpris.findAll", query="SELECT j FROM JuniorEnterprise j")
 public class JuniorEnterprise implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
 	private String abbreviation;

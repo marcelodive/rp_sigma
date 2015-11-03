@@ -14,11 +14,11 @@ public class ProfileBacking {
 	
 	public void saveUser(){
 		UserController userController = new UserController();
-		Timestamp createdAt  = new Timestamp(Calendar.getInstance().getTime().getTime());		
+		Timestamp createdAt  = new Timestamp(Calendar.getInstance().getTime().getTime());
 		
 		this.user.setAdministrator(false);
 		this.user.setCreatedAt(createdAt);
-		this.user.setActive(true);
+		this.user.setStatus(true);
 		this.user.setUpdatedAt(createdAt);
 		
 		userController.saveUser(this.user);

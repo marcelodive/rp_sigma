@@ -16,7 +16,6 @@ public class City implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
 	private String name;
@@ -25,7 +24,7 @@ public class City implements Serializable {
 	@ManyToOne
 	private State state;
 
-	//bi-directional many-to-one association to JuniorEnterprise
+	//bi-directional many-to-one association to JuniorEnterpris
 	@OneToMany(mappedBy="city")
 	private List<JuniorEnterprise> juniorEnterprises;
 
@@ -71,7 +70,7 @@ public class City implements Serializable {
 		return juniorEnterprise;
 	}
 
-	public JuniorEnterprise removeJuniorEnterprise(JuniorEnterprise juniorEnterprise) {
+	public JuniorEnterprise removeJuniorEnterpris(JuniorEnterprise juniorEnterprise) {
 		getJuniorEnterprises().remove(juniorEnterprise);
 		juniorEnterprise.setCity(null);
 
