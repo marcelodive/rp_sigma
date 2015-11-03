@@ -11,7 +11,15 @@
 </h:head>
 <h:body>
 
-	
+	<p:dataTable var="JEs" value="#{juniorEnterpriseSupport.juniorEnterprises}">
+		<p:column headerText="Id">
+			<h:outputText value="#{JEs.id}" />
+		</p:column>
+		
+		<p:column headerText="Nome">
+			<h:outputText value="#{JEs.abbreviation}" />
+		</p:column>		
+	</p:dataTable>
 
 </h:body>
 </html>
