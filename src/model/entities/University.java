@@ -20,7 +20,7 @@ public class University implements Serializable {
 
 	private String name;
 
-	//bi-directional many-to-one association to JuniorEnterpris
+	//bi-directional many-to-one association to JuniorEnterprise
 	@OneToMany(mappedBy="university")
 	private List<JuniorEnterprise> juniorEnterprises;
 
